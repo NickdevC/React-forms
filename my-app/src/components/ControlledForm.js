@@ -5,12 +5,24 @@ export class ControlledForm extends Component {
         super(props)
     
         this.state = {
-            name: ''
+            name: '',
+            category: 'website',
+            comment: '',
         }
     }
     handleNameChange = (event) => {
         this.setState({
             name: event.target.value 
+        })
+    }
+    handleCategoryChange = (event) => {
+        this.setState({
+            category: event.target.value
+        })
+    }
+    handleCommentChange = (event) => {
+        this.setState({
+            comment: event.target.value
         })
     }
     render() {
@@ -30,7 +42,12 @@ export class ControlledForm extends Component {
                     </div>
                     <div>
                         <label htmlFor='id-category'>Query category:</label>
-                        <select id='id-category' name='category'>
+                        <select 
+                            id='id-category' 
+                            name='category' 
+                            onChange={this.handleCategoryChange} 
+                            value={this.state.category}
+                        >
                             <option value="website">Website issue</option>
                             <option value="order">Order issue</option>
                             <option value="general">General enquiry</option>
@@ -38,7 +55,12 @@ export class ControlledForm extends Component {
                     </div>
                     <div>
                         <label htmlFor='id-comments'>Comments:</label>
-                        <textarea id='id-comments' name='comments' />
+                        <textarea 
+                            id='id-comments' 
+                            name='comments' 
+                            onChange={this.handleCommentChange} 
+                            value={this.state.comment}
+                        />
                     </div>
                     <input type="submit" value="Submit" />
                 </form>
