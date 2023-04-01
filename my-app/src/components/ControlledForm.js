@@ -25,6 +25,12 @@ export class ControlledForm extends Component {
                         name='name' 
                         type="text" 
                     />
+                    <label htmlFor='id-category'>Query category:</label>
+                    <select id='id-category' name='category'>
+                        <option>Website issue</option>
+                        <option>Order issue</option>
+                        <option>General enquiry</option>
+                    </select>
                     <input type="submit" value="Submit" />
                 </form>
             </div>
