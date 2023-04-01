@@ -5,14 +5,21 @@ export class ControlledForm extends Component {
         super(props)
     
         this.state = {
-            first
+            name: ''
         }
     }
     render() {
         return (
             <div>
                 <form>
-
+                    <label htmlFor='id-name'>Your name:</label>
+                    <input 
+                        value={this.state.name} 
+                        id='id-name' 
+                        name='name' 
+                        type="text" 
+                    />
+                    <input type="submit" value="Submit" />
                 </form>
             </div>
         )
